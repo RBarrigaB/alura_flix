@@ -1,0 +1,17 @@
+{
+    "videos": [
+        {
+            "id": 1,   
+            "titulo": "¿Qué es Javascript?",
+            "categoria": "frontend",
+            "imagen": "https://th.bing.com/th?&id=OVP.uTXSdM_VLRxURWvvVadFWQHgFo&w=327&h=183&c=7&pid=2.1&rs=1",
+            "video": "https://youtu.be/x5YUu0eUc8s",
+            "descripcion": "Explicación de fundamentos de Javascript"
+        }
+    ],
+    "categorias": [
+        {"id": 1, "nombre":"frontend"},
+        {"id": 2, "nombre":"backend"},
+        {"id": 3, "nombre":"dataScience"}
+    ]
+}

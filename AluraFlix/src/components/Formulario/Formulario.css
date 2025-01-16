@@ -1,0 +1,131 @@
+/* General del formulario */
+.formulario {
+    width: 100%;
+    margin: 3rem auto;
+    background-color: #1c1c1c;
+    color: white;
+    border-radius: 8px;
+    padding: 2rem 3rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    font-family: Arial, sans-serif;
+  }
+  
+  .formulario h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #f5f5f5;
+  }
+  
+  /* Estilo de los campos */
+  form {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  form label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  form input,
+  form select,
+  form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  form input::placeholder,
+  form textarea::placeholder {
+    color: #777;
+  }
+  
+  form input:focus,
+  form textarea:focus,
+  form select:focus {
+    outline: none;
+    border: 1px solid #0d6efd;
+  }
+  
+  /* Botones */
+  form .boton-contenedor {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  form button {
+    flex: 1;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #0d6efd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #0b5ed7;
+  }
+  
+  form button[type="reset"] {
+    background-color: #6c757d;
+  }
+  
+  form button[type="reset"]:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Mensajes de error */
+  .error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Líneas decorativas sobre y debajo del título */
+.titulo-con-lineas {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .titulo-con-lineas hr {
+    flex: 1;
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+  }
+  
+  .titulo-con-lineas h2 {
+    font-size: 1.5rem;
+    color: #f5f5f5;
+    margin: 0;
+  }
+
+  .titulo__opciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+  }
+
+  .imagen__video {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+  }
+  

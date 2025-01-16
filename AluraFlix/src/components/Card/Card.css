@@ -1,0 +1,67 @@
+/* Estilo de la tarjeta */
+.card {
+    width: 300px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 0 15px rgba(13, 110, 253, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8), 0 0 20px rgba(13, 110, 253, 0.7);
+  }
+  
+  /* Imagen del video */
+  .card__image-link {
+    display: block;
+  }
+  
+  .card__image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    border-bottom: 2px solid #0d6efd;
+  }
+  
+  /* Contenido de la tarjeta */
+  .card__content {
+    padding: 15px;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Título */
+  .card__title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Botones */
+  .card__buttons {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+  }
+  
+  .card__button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .card__button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+  }
+
+  

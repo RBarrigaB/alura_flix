@@ -1,0 +1,32 @@
+.campo__texto {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+  }
+  
+  .campo__texto label {
+    font-size: 1rem;
+    color: #f5f5f5;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+  
+  .campo__texto input {
+    padding: 10px;
+    border: 1px solid #444;
+    background-color: #2c2c2c;
+    color: #f5f5f5;
+    font-size: 1rem;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .campo__texto input:focus {
+    outline: none;
+    border: 1px solid #0d6efd;
+  }
+  
+  .campo__texto input::placeholder {
+    color: #888;
+  }
