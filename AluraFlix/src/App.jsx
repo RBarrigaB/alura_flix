@@ -7,6 +7,7 @@ import Equipo from "./components/Equipo";
 import Footer from "./components/Footer";
 import { v4 as uuidv4 } from "uuid";
 import Card from "./components/Card";
+import FormularioEditar from "./components/FormularioEditar";
 
 function App() {
   const [mostrarForm, actualizarForm] = useState(false);
@@ -101,9 +102,16 @@ function App() {
               equipos={equipos.map((equipo) => equipo.titulo)}
               registrarColaborador={registrarColaborador}
               crearEquipo={crearEquipo}
+              formType="crear"
             />
           )
         }
+        <FormularioEditar
+        equipos={equipos.map((equipo) => equipo.titulo)}
+        registrarColaborador={registrarColaborador}
+        crearEquipo={crearEquipo}
+        campoEditar = "editField" 
+        />
         <MiOrg titulo="Mi organización" actualizarOrg={actualizarOrg} />
         {equipos.map((equipo) => (
           <Equipo
