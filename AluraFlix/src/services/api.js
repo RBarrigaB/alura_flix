@@ -7,6 +7,7 @@ const videosApi = axios.create({
 export const findAll = async(endpoint) => {
     try {
         const resp = await videosApi.get(`/${endpoint}`)
+        console.log("Data obtenida: ",resp.data)
         return resp.data
     } catch (e) {
         console.error("Error al obtener  "+endpoint,e)

@@ -12,7 +12,7 @@ const Formulario = (props) => {
   const [imagen, setImagen] = useState("");
   const [video, setVideo] = useState("");
   const [descripcion, setDescripcion] = useState("");
-  const { registrarVideo, categorias, formType } = props;
+  const { registrarVideo, categorias, formType,mostrarFormCrear} = props;
 
   const manejoForm = (event) => {
     event.preventDefault();
@@ -26,6 +26,7 @@ const Formulario = (props) => {
     };
     registrarVideo(nuevoVideo);
     limpiarForm();
+    mostrarFormCrear()
   };
 
   const limpiarForm = () => {

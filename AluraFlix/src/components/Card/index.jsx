@@ -2,13 +2,17 @@ import "./Card.css";
 import { HiOutlineArchiveBoxXMark, HiOutlinePencil } from "react-icons/hi2";
 
 const Card = (props) => {
-  const { colorPrimario, infoVideo, eliminarVideo,mostrarFormEditar} = props;
+  const { colorPrimario, infoVideo, eliminarVideo,mostrarFormEditar,actualizarCategoriaActual} = props;
   const id = infoVideo?.id;
   const imagen = infoVideo?.imagen;
   const video = infoVideo?.video;
+  const categoria = infoVideo?.categoria;
 
   return infoVideo ? (
-    <div className="card" style={{ boxShadow: `inset 0 0 10px 3px ${colorPrimario}`}}>
+    <div className="card" style={{ boxShadow: `inset 0 0 10px 3px ${colorPrimario}`}} onMouseEnter={() => {
+      console.log("Mouse enter triggered:", categoria);
+      actualizarCategoriaActual(categoria);
+    }}>
         <a
         href={video}
         target="_blank"

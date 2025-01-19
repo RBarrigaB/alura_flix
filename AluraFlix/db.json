@@ -41,20 +41,36 @@
       "descripcion": "Card de squirtle"
     },
     {
-      "id": "9e7ff3f9-fc95-4cb0-8d3d-a84e36bed47b",
-      "titulo": "Blastoise",
-      "categoria": "Programación",
-      "imagen": "https://th.bing.com/th?id=OIP.Ylfej_KJ6FciN-WO2RCQ1wHaIT&w=236&h=264&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
-      "video": "https://youtu.be/eY_DBWkwSC4",
-      "descripcion": "Card de Blastoise"
-    },
-    {
       "id": "2a6fc2f5-0411-408f-ab2a-00dd1357fe04",
       "titulo": "Alakazam",
       "categoria": "Programación",
       "imagen": "https://th.bing.com/th?id=OIP.UzPIg0Yep8HpK70X2Cu8uQHaHy&w=243&h=256&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
       "video": "https://youtu.be/UQ5FOaQmtNY",
       "descripcion": "Card de alakazam"
+    },
+    {
+      "id": "2974eeb4-66ee-4f95-8ce9-ac8dddcd1e62",
+      "titulo": "Blastoise",
+      "categoria": "Data science",
+      "imagen": "https://th.bing.com/th?id=OIP.zSfhBJMFIipgGQcRjC-cWQHaG0&w=260&h=240&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "video": "https://youtu.be/Ej4lUHm_uXo",
+      "descripcion": "Test"
+    },
+    {
+      "id": "1efb9932-75f4-4a0d-8541-edf742f54fd9",
+      "titulo": "Blastoise",
+      "categoria": "",
+      "imagen": "https://th.bing.com/th?id=OIP.3Hl6A42anRoeUTfyXbt-vwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "video": "https://youtu.be/Ej4lUHm_uXo",
+      "descripcion": "Test23"
+    },
+    {
+      "id": "a8896f2a-a5fe-4cfd-b305-d6040c254a44",
+      "titulo": "Charizard",
+      "categoria": "Programación",
+      "imagen": "https://th.bing.com/th/id/OIP.RYuorer61b-bNHADzxysHAHaG9?rs=1&pid=ImgDetMain",
+      "video": "https://youtu.be/0KDAwBcoXv4",
+      "descripcion": "Charizard"
     }
   ],
   "categorias": [
@@ -62,49 +78,73 @@
       "id": "1",
       "titulo": "Programación",
       "colorPrimario": "#57C278",
-      "colorSecundario": "#D9F7E9"
+      "colorSecundario": "#D9F7E9",
+      "descripcion": "La programación es el acto de programar, es decir,organizar una secuencia de pasos ordenados a seguir para hacer cierta cosa.",
+      "imagen":"https://th.bing.com/th?&id=OVP.MDM36nML2N7NoqUanhfdQAHgFo&w=327&h=183&c=7&pid=2.1&rs=1",
+      "video": "https://youtu.be/7vbi-OCFZEY"
     },
     {
       "id": "2",
       "titulo": "Front end",
       "colorPrimario": "#82CFFA",
-      "colorSecundario": "#E8F8FF"
+      "colorSecundario": "#E8F8FF",
+      "descripcion": "El frontend sirve para realizar la interfaz de un sitio web, desde su estructura hasta los estilos, como pueden ser la definición de los colores, texturas, tipografías, secciones, entre otros",
+      "imagen":"https://th.bing.com/th?&id=OVP.npR3L3Fi2W7GLKvKhys64AHgFo&w=327&h=183&c=7&pid=2.1&rs=1",
+      "video": "https://youtu.be/e0NwBRUbE38"
     },
     {
       "id": "3",
       "titulo": "Data science",
       "colorPrimario": "#A6D157",
-      "colorSecundario": "#F0F8E2"
+      "colorSecundario": "#F0F8E2",
+      "descripcion": "La ciencia de datos es una disciplina científica que combina matemáticas, estadística, programación, análisis avanzado, inteligencia artificial y machine learning para descubrir conocimientos procesables ocultos en los datos de una organización",
+      "imagen":"https://th.bing.com/th?&id=OVP.8ek-o-d4d1Zub5jmjVogxwHgFo&w=327&h=183&c=7&pid=2.1&rs=1",
+      "video": "https://youtu.be/dH5v_mcvlXM"
     },
     {
       "id": "4",
       "titulo": "Devops",
       "colorPrimario": "#E06B69",
-      "colorSecundario": "#FDE7E8"
+      "colorSecundario": "#FDE7E8",
+      "descripcion": "DevOps es una metodología de desarrollo de software que acelera la entrega de aplicaciones y servicios de mayor calidad combinando y automatizando el trabajo de los equipos de desarrollo de software y operaciones de TI.",
+      "imagen":"https://th.bing.com/th?&id=OVP.GbO-hiN8CLnuN0YQfjhcmQHgFo&w=327&h=183&c=7&pid=2.1&rs=1",
+      "video": "https://youtu.be/1ZsvOgfo9sI"
     },
     {
       "id": "5",
       "titulo": "UX y Diseño",
       "colorPrimario": "#DB6EBF",
-      "colorSecundario": "#FAE9F5"
+      "colorSecundario": "#FAE9F5",
+      "descripcion": "El diseño UX se refiere al proceso de diseño de pensamiento para diseñar la experiencia del cliente de un servicio, producto o sistema1. Es una disciplina que combina psicología, diseño gráfico, investigación de usuarios y tecnología para crear soluciones que resuelvan problemas y deleiten a los usuarios",
+      "imagen": "https://th.bing.com/th?&id=OVP.FMe2mHHTFyY9rsGZjdpJgAHgFo&w=327&h=183&c=7&pid=2.1&rs=1",
+      "video": "https://youtu.be/nb_R82nZLEg"
     },
     {
       "id": "6",
       "titulo": "Móvil",
       "colorPrimario": "#FFBA05",
-      "colorSecundario": "#FFF5D9"
+      "colorSecundario": "#FFF5D9",
+      "descripcion": "La programación móvil es el proceso de crear aplicaciones y software optimizados para funcionar en dispositivos móviles, como teléfonos inteligentes y tabletas1234. Es un paradigma más de la informática que se centra en el desarrollo de software para dispositivos con sistemas operativos móviles, como Android, iOS y Windows Phone",
+      "imagen": "https://th.bing.com/th?&id=OVP.cHz7U-Cyx9pBtlNjtbsmgQHgFo&w=327&h=183&c=7&pid=2.1&rs=1",
+      "video": "https://youtu.be/wjAmGtDUGgo"
     },
     {
       "id": "7",
       "titulo": "Innovación y Gestión",
       "colorPrimario": "#FF8A29",
-      "colorSecundario": "#FFFEDF"
+      "colorSecundario": "#FFFEDF",
+      "descripcion": "La innovación en informática se refiere al proceso continuo de desarrollo, mejora y aplicación de tecnologías de la información y la comunicación (TIC) para crear soluciones nuevas y más eficientes que impactan en múltiples aspectos de la vida cotidiana y empresarial. La innovación tecnológica abarca la creación, adopción y utilización de nuevas tecnologías para mejorar procesos, productos o servicios",
+      "imagen": "https://th.bing.com/th?&id=OVP.r9LL0o_Z5NuwL_MdE7zi9gHgFo&w=327&h=183&c=7&pid=2.1&rs=1",
+      "video": "https://youtu.be/wlykHD0-_qk"
     },
     {
       "id": "8",
       "titulo": "Backend",
       "colorPrimario": "#58BC11",
-      "colorSecundario": "#2C5B0B"
+      "colorSecundario": "#2C5B0B",
+      "descripcion": "ackend es un profesional de la informática especializado en la creación, implementación y mantenimiento de la lógica del lado del servidor que permite que las aplicaciones web funcionen correctamente. Estos expertos/as se enfocan en la gestión de bases de datos, la manipulación de datos, la interfaz de programación de aplicaciones (API), la arquitectura y los servidores, la lógica empresarial y la comunicación con el frontend, que es la parte visible con la que los usuarios/as interactúan directamente.",
+      "imagen": "https://th.bing.com/th?&id=OVP.ZVRgTrXtyY5kopOJR5N8IAHgFo&w=327&h=183&c=7&pid=2.1&rs=1",
+      "video": "https://youtu.be/0Zb5fgO0ubE"
     }
   ]
 }
