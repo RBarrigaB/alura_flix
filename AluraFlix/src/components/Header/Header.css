@@ -1,10 +1,12 @@
 .header {
     display: flex;
     justify-content: space-between;
+    box-sizing: border-box;
     align-items: center;
     background-color: #1c1c1c;
     padding: 10px 20px;
     border-bottom: 2px solid #0d6efd;
+    width: 100%;
   }
   
   .header__logo {

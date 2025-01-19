@@ -23,7 +23,7 @@ const Formulario = (props) => {
       imagen,
       video,
       descripcion,
-    }
+    };
     registrarVideo(nuevoVideo);
     limpiarForm();
   };
@@ -43,9 +43,7 @@ const Formulario = (props) => {
 
       <form onSubmit={manejoForm}>
         <div className="titulo-con-lineas">
-          <hr />
           <h2>Crear Tarjeta</h2>
-          <hr />
         </div>
 
         {/* Campos */}
@@ -85,18 +83,18 @@ const Formulario = (props) => {
             type="texto"
           />
         </div>
-
-        <Campo
-          titulo="Descripción"
-          placeholder="descripción"
-          required={true}
-          valor={descripcion}
-          setValor={setDescripcion}
-          type="texto"
-          nombre="descripcion"
-          descripcionFormato="campo_descripcion_crear"
-        />
-
+        <div className="desc__field">
+          <Campo
+            titulo="Descripción"
+            placeholder="descripción"
+            required={true}
+            valor={descripcion}
+            setValor={setDescripcion}
+            type="texto"
+            nombre="descripcion"
+            descripcionFormato="campo_descripcion_crear"
+          />
+        </div>
         <div className="boton-contenedor">
           <Boton
             titulo="Guardar"

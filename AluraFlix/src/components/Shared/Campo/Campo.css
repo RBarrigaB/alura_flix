@@ -30,3 +30,7 @@
   .campo__texto input::placeholder {
     color: #888;
   }
+
+  .general {
+    width: 100%;
+  }

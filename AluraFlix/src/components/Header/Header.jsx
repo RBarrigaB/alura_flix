@@ -1,11 +1,13 @@
 import "./Header.css"
 
-function Header() {
+function Header(props) {
+
+    const {mostrarFormVideo,homeContent} = props;
     return <header className="header">
            <img className="header__logo" src='src\assets\img\aluraflix_logo.png' alt="aluraflix logo" ></img>
       <nav className="header__nav">
-        <button className="header__button header__button--primary">HOME</button>
-        <button className="header__button header__button--secondary">NUEVO VIDEO</button>
+        <button className="header__button header__button--primary" onClick={homeContent}>HOME</button>
+        <button className="header__button header__button--secondary" onClick={mostrarFormVideo}>NUEVO VIDEO</button>
       </nav>
            </header>
     

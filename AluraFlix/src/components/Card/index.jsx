@@ -2,7 +2,7 @@ import "./Card.css";
 import { HiOutlineArchiveBoxXMark, HiOutlinePencil } from "react-icons/hi2";
 
 const Card = (props) => {
-  const { colorPrimario, infoVideo, eliminarVideo } = props;
+  const { colorPrimario, infoVideo, eliminarVideo,mostrarFormEditar} = props;
   const id = infoVideo?.id;
   const imagen = infoVideo?.imagen;
   const video = infoVideo?.video;
@@ -28,7 +28,7 @@ const Card = (props) => {
             </button>
           </div>
 
-          <button className="card__button card__button--edit">
+          <button className="card__button card__button--edit" onClick={() => mostrarFormEditar(id,true)}>
             <HiOutlinePencil className="iconos"/> Editar
           </button>
         </div>

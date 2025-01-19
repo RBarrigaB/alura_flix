@@ -2,29 +2,44 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Formulario from "./components/Formulario/Formulario";
 import Header from "./components/Header/Header";
-import MiOrg from "./components/MiOrg";
 import Equipo from "./components/Equipo";
 import Footer from "./components/Footer";
 import Card from "./components/Card";
 import FormularioEditar from "./components/FormularioEditar";
 import { create as crearVideo,
          findAll as obtenerTodo,
-         eliminar as servicioEliminar 
+         eliminar as servicioEliminar,
+         update as actualizarVideo 
  } from "./services/api";
 
 function App() {
   const [mostrarForm, actualizarForm] = useState(false);
+  const [mostrarModalEditar, actualizarMostrarModalEditar] = useState(false);
+  const [idVideoEditar,actualizarIdVideoEditar] = useState("")
+  const [mostrarContent, actualizarMostrarContent] = useState(true);
   const [colaboradores, actualizarColaboradores] = useState([]);
   let [videos,actualizarVideos] = useState([]);
   let [categorias,actualizarCategoria] = useState([]);
-  const actualizarOrg = () => {
-    actualizarForm(!mostrarForm);
+
+
+  const mostrarVideoForm = () => {
+    actualizarForm(true); 
+    actualizarMostrarContent(false); 
+  };
+
+  const homeContent = () => {
+    actualizarMostrarContent(true); 
+    actualizarForm(false); 
   };
 
   const registrarVideo = async (video) => {
    await crearVideo('videos',video)
    await obtenerVideos();
   };
+
+  const actualizarVideosService = async (id,video) => {
+    await actualizarVideo('videos',id,video)
+  }
 
   const eliminarVideo = async (id) => {
     console.log("Eliminar video en padre: ",id);
@@ -38,6 +53,15 @@ function App() {
 
   const obtenerCategorias = async () => {
     actualizarCategoria(await obtenerTodo('categorias'))
+  }
+
+  const mostrarFormEditar = (id,isVisible) => {
+    actualizarIdVideoEditar(id)
+    actualizarMostrarModalEditar(isVisible)
+  }
+
+  const cerrarFormEditar = (isVisible) => {
+    actualizarMostrarModalEditar(isVisible)
   }
 
   useEffect(() => {
@@ -70,9 +94,8 @@ function App() {
     <>
       <div>
         {/* <Header></Header>*/}
-        <Header />
+        <Header mostrarFormVideo = {mostrarVideoForm} homeContent={homeContent}/>
         <Card />
-        {/*mostrarForm?<Formulario />:<></>*/}
         {
           /* Corto circuito */
           mostrarForm && (
@@ -84,13 +107,16 @@ function App() {
             />
           )
         }
-       { mostrarForm && (<FormularioEditar
-        equipos={equipos.map((equipo) => equipo.titulo)}
+       { mostrarModalEditar && (<FormularioEditar
+        categorias={categorias.map((categoria) => categoria.titulo)}
         crearEquipo={crearEquipo}
-        campoEditar = "editField" 
+        campoEditar = "editField"
+        mostrarModalEditar = {mostrarModalEditar}
+        initForm={videos.find((video) => video.id === idVideoEditar)}
+        actualizarVideosService = {actualizarVideosService}
+        cerrarFormEditar={cerrarFormEditar} 
         />)}
-        <MiOrg titulo="Mi organización" actualizarOrg={actualizarOrg} />
-        {equiposIniciales.map((equipo) => {
+        {mostrarContent && equiposIniciales.map((equipo) => {
         const videosCategoria = videos.filter(
           (video) =>
             video.categoria.replace(/\s+/g, '').toLowerCase() ===
@@ -102,14 +128,15 @@ function App() {
             <Equipo
               key={equipo.titulo}
               data={{
-                categoria: equipo.titulo, // Nombre de la categoría
-                videos: videosCategoria, // Videos filtrados por categoría
+                categoria: equipo.titulo, 
+                videos: videosCategoria,
               }}
               colorPrimario={equipo.colorPrimario}
               colorSecundario={equipo.colorSecundario}
-              videosCategoria={videosCategoria} // Se mantiene este prop según la estructura existente
+              videosCategoria={videosCategoria} 
               eliminarVideo={eliminarVideo}
               cambiarLike={cambiarLike}
+              mostrarFormEditar = {mostrarFormEditar}
             />
           );
         }

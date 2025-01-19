@@ -1,0 +1,45 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  position: relative; /* Posiciona elementos dentro del contenedor */
+  background-color: transparent; /* Fondo completamente transparente */
+  border: none; /* Sin bordes */
+  box-shadow: none; /* Sin sombra */
+  width: auto; /* Se adapta al contenido */
+  max-width: none; /* Sin restricción de ancho */
+}
+
+
+
+.modal-close:hover {
+  background-color: #2271d1; /* Color de fondo al pasar el ratón */
+  color: #fff; /* Color del ícono al pasar el ratón */
+  border-color: #2271d1; /* Cambia el color del borde */
+  box-shadow: 0 0 10px rgba(34, 113, 209, 0.6); /* Sombra para efecto */
+}
+
+.modal-close {
+  position: absolute;
+  background-color: transparent;
+  color: white;
+  width: 90px;
+  height: 90px;
+  top: 55px;
+  right: -90px;
+}
+
+.close__icon {
+  width: 100%;
+  height: auto;
+}

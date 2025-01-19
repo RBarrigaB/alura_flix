@@ -2,69 +2,86 @@ import "./FormularioEditar.css";
 import "../Shared/Campo";
 import Campo from "../Shared/Campo";
 import ListaOpciones from "../Shared/ListaOpciones";
-import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import Modal from "../Modal";
+import { useState, useEffect } from "react";
 import Boton from "../Shared/Boton";
 
 const FormularioEditar = (props) => {
-  const [nombre, setNombre] = useState("");
-  const [puesto, setPuesto] = useState("");
-  const [foto, setFoto] = useState("");
-  const [equipo, setEquipo] = useState("");
+  let [id, setId] = useState("");
+  let [titulo, setTitulo] = useState("");
+  let [categoria, setCategoria] = useState("");
+  let [imagen, setImagen] = useState("");
+  let [video, setVideo] = useState("");
+  let [descripcion, setDescripcion] = useState("");
+  const { categorias, formType, initForm,mostrarModalEditar,actualizarVideosService,cerrarFormEditar} = props;
 
-  const [titulo, setTitulo] = useState("");
-  const { registrarColaborador, equipos } = props;
+  const closeModal = () => {
+    cerrarFormEditar(false);
+  };
 
   const manejoForm = (event) => {
     event.preventDefault();
-    let transactionalObj = {
-      id: uuidv4(),
-      nombre,
-      puesto,
-      foto,
-      equipo,
-      favorito: false,
+    const nuevoVideo = {
+      id,
+      titulo,
+      categoria,
+      imagen,
+      video,
+      descripcion,
     };
-    registrarColaborador(transactionalObj);
+    actualizarVideosService(id,nuevoVideo);
+    limpiarForm();
+    closeModal();
   };
 
-  /*    const manejoFormEquipo = (event) => {
-        event.preventDefault()
-        let equipoObj = {
-            id: uuidv4(),
-            titulo,
-            colorPrimario: color
-        }
-        crearEquipo(equipoObj)
-    } */
+  const limpiarForm = () => {
+    setId("")
+    setTitulo("");
+    setCategoria("");
+    setImagen("");
+    setVideo("");
+    setDescripcion("");
+  };
+
+  useEffect(() => {
+    setId(initForm.id || "");
+    setTitulo(initForm.titulo || "");
+    setCategoria(initForm.categoria || "");
+    setImagen(initForm.imagen || "");
+    setVideo(initForm.video || "");
+    setDescripcion(initForm.descripcion || "");
+  }, [initForm,mostrarModalEditar]);
+
   return (
+    <Modal isVisible={mostrarModalEditar} onClose={closeModal}>
     <section className="formularioEditar">
       <h1>EDITAR CARD</h1>
-
       <form onSubmit={manejoForm}>
-
         {/* Campos */}
+        <div className="titulo__opciones">
           <Campo
             titulo="Título"
             placeholder="título"
             required={true}
-            valor={nombre}
-            setValor={setNombre}
-            
+            valor={titulo}
+            setValor={setTitulo}
           />
 
           <ListaOpciones
-            valor={equipo}
-            setValor={setEquipo}
-            equipos={equipos}
+            valor={categoria}
+            setValor={setCategoria}
+            categorias={categorias}
+            formType={formType}
           />
+        </div>
 
+        <div className="imagen__video">
           <Campo
             titulo="Imagen"
             placeholder="enlace de la imagen"
             required={true}
-            valor={foto}
-            setValor={setFoto}
+            valor={imagen}
+            setValor={setImagen}
             type="texto"
           />
 
@@ -72,28 +89,39 @@ const FormularioEditar = (props) => {
             titulo="Video"
             placeholder="enlace del video"
             required={true}
-            valor={puesto}
-            setValor={setPuesto}
+            valor={video}
+            setValor={setVideo}
             type="texto"
           />
+        </div>
 
         <Campo
           titulo="Descripción"
           placeholder="descripción"
           required={true}
-          valor={titulo}
-          setValor={setTitulo}
+          valor={descripcion}
+          setValor={setDescripcion}
           type="texto"
           nombre="descripcion"
-          descripcionFormato="campo_descripcion_editar"
+          descripcionFormato="campo_descripcion_crear"
         />
 
         <div className="boton-contenedor">
-          <Boton titulo="Guardar" type="submit" externalClassName="btn-guardar"/>
-          <Boton titulo="Limpiar" type="reset" externalClassName="btn-limpiar"/>
+          <Boton
+            titulo="Guardar"
+            type="submit"
+            externalClassName="btn-guardar"
+          />
+          <Boton
+            titulo="Limpiar"
+            type="reset"
+            externalClassName="btn-limpiar"
+            onClick={limpiarForm}
+          />
         </div>
       </form>
     </section>
+       </Modal>
   );
 };
 

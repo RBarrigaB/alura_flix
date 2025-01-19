@@ -4,7 +4,7 @@ import Card from '../Card'
 const Equipo = (props) => {
 
     const {categoria} = props.data
-    const {videosCategoria,eliminarVideo,colorPrimario} = props
+    const {videosCategoria,eliminarVideo,colorPrimario,mostrarFormEditar} = props
     const uniqueVideos = videosCategoria.filter(
         (video, index, self) => index === self.findIndex((v) => v.id === video.id)
       );
@@ -17,6 +17,7 @@ const Equipo = (props) => {
            key={index} 
            colorPrimario={colorPrimario} 
            eliminarVideo={eliminarVideo}
+           mostrarFormEditar={mostrarFormEditar}
            />)} 
         </div>
     </section>

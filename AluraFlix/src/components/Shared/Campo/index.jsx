@@ -18,7 +18,7 @@ const Campo = (props) => {
   let types = type === "texto" ? type : "texto " + "campo__" + type;
   if (nombre !== "descripcion") {
     return (
-      <div className={"campo__" + types}>
+      <div className={"campo__" + types+" general"}>
         <label htmlFor={"input" + titulo}>{titulo}</label>
         <input
           type={type}
