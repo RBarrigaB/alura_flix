@@ -7,36 +7,35 @@ import { v4 as uuidv4 } from "uuid";
 import Boton from "../Shared/Boton";
 
 const Formulario = (props) => {
-  const [nombre, setNombre] = useState("");
-  const [puesto, setPuesto] = useState("");
-  const [foto, setFoto] = useState("");
-  const [equipo, setEquipo] = useState("");
-
   const [titulo, setTitulo] = useState("");
-  const { registrarColaborador, equipos,formType } = props;
+  const [categoria, setCategoria] = useState("");
+  const [imagen, setImagen] = useState("");
+  const [video, setVideo] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+  const { registrarVideo, categorias, formType } = props;
 
   const manejoForm = (event) => {
     event.preventDefault();
-    let transactionalObj = {
+    const nuevoVideo = {
       id: uuidv4(),
-      nombre,
-      puesto,
-      foto,
-      equipo,
-      favorito: false,
-    };
-    registrarColaborador(transactionalObj);
+      titulo,
+      categoria,
+      imagen,
+      video,
+      descripcion,
+    }
+    registrarVideo(nuevoVideo);
+    limpiarForm();
   };
 
-  /*    const manejoFormEquipo = (event) => {
-        event.preventDefault()
-        let equipoObj = {
-            id: uuidv4(),
-            titulo,
-            colorPrimario: color
-        }
-        crearEquipo(equipoObj)
-    } */
+  const limpiarForm = () => {
+    setTitulo("");
+    setCategoria("");
+    setImagen("");
+    setVideo("");
+    setDescripcion("");
+  };
+
   return (
     <section className="formulario">
       <h1>NUEVO VIDEO</h1>
@@ -55,14 +54,14 @@ const Formulario = (props) => {
             titulo="Título"
             placeholder="título"
             required={true}
-            valor={nombre}
-            setValor={setNombre}
+            valor={titulo}
+            setValor={setTitulo}
           />
 
           <ListaOpciones
-            valor={equipo}
-            setValor={setEquipo}
-            equipos={equipos}
+            valor={categoria}
+            setValor={setCategoria}
+            categorias={categorias}
             formType={formType}
           />
         </div>
@@ -72,8 +71,8 @@ const Formulario = (props) => {
             titulo="Imagen"
             placeholder="enlace de la imagen"
             required={true}
-            valor={foto}
-            setValor={setFoto}
+            valor={imagen}
+            setValor={setImagen}
             type="texto"
           />
 
@@ -81,8 +80,8 @@ const Formulario = (props) => {
             titulo="Video"
             placeholder="enlace del video"
             required={true}
-            valor={puesto}
-            setValor={setPuesto}
+            valor={video}
+            setValor={setVideo}
             type="texto"
           />
         </div>
@@ -91,16 +90,25 @@ const Formulario = (props) => {
           titulo="Descripción"
           placeholder="descripción"
           required={true}
-          valor={titulo}
-          setValor={setTitulo}
+          valor={descripcion}
+          setValor={setDescripcion}
           type="texto"
           nombre="descripcion"
           descripcionFormato="campo_descripcion_crear"
         />
 
         <div className="boton-contenedor">
-          <Boton titulo="Guardar" type="submit" externalClassName="btn-guardar"/>
-          <Boton titulo="Limpiar" type="reset" externalClassName="btn-limpiar"/>
+          <Boton
+            titulo="Guardar"
+            type="submit"
+            externalClassName="btn-guardar"
+          />
+          <Boton
+            titulo="Limpiar"
+            type="reset"
+            externalClassName="btn-limpiar"
+            onClick={limpiarForm}
+          />
         </div>
       </form>
     </section>

@@ -1,76 +1,54 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Formulario from "./components/Formulario/Formulario";
 import Header from "./components/Header/Header";
 import MiOrg from "./components/MiOrg";
 import Equipo from "./components/Equipo";
 import Footer from "./components/Footer";
-import { v4 as uuidv4 } from "uuid";
 import Card from "./components/Card";
 import FormularioEditar from "./components/FormularioEditar";
+import { create as crearVideo,
+         findAll as obtenerTodo,
+         eliminar as servicioEliminar 
+ } from "./services/api";
 
 function App() {
   const [mostrarForm, actualizarForm] = useState(false);
   const [colaboradores, actualizarColaboradores] = useState([]);
+  let [videos,actualizarVideos] = useState([]);
+  let [categorias,actualizarCategoria] = useState([]);
   const actualizarOrg = () => {
     actualizarForm(!mostrarForm);
   };
 
-  const registrarColaborador = (colaborador) => {
-    actualizarColaboradores([...colaboradores, colaborador]);
+  const registrarVideo = async (video) => {
+   await crearVideo('videos',video)
+   await obtenerVideos();
   };
 
-  const eliminarColaborador = (id) => {
-    let nuevosColaboradores = colaboradores.filter(
-      (colabId) => colabId.id !== id
-    );
-    actualizarColaboradores(nuevosColaboradores);
+  const eliminarVideo = async (id) => {
+    console.log("Eliminar video en padre: ",id);
+   await servicioEliminar('videos',id);
+   await obtenerVideos();
   };
 
-  const equiposIniciales = [
-    {
-      id: uuidv4(),
-      titulo: "Programación",
-      colorPrimario: "#57C278",
-      colorSecundario: "#D9F7E9",
-    },
-    {
-      id: uuidv4(),
-      titulo: "Front end",
-      colorPrimario: "#82CFFA",
-      colorSecundario: "#E8F8FF",
-    },
-    {
-      id: uuidv4(),
-      titulo: "Data science",
-      colorPrimario: "#A6D157",
-      colorSecundario: "#F0F8E2",
-    },
-    {
-      id: uuidv4(),
-      titulo: "Devops",
-      colorPrimario: "#E06B69",
-      colorSecundario: "#FDE7E8",
-    },
-    {
-      id: uuidv4(),
-      titulo: "UX y Diseño",
-      colorPrimario: "#DB6EBF",
-      colorSecundario: "#FAE9F5",
-    },
-    {
-      id: uuidv4(),
-      titulo: "Móvil",
-      colorPrimario: "#FFBA05",
-      colorSecundario: "#FFF5D9",
-    },
-    {
-      id: uuidv4(),
-      titulo: "Innovación y Gestión",
-      colorPrimario: "#FF8A29",
-      colorSecundario: "#FFFEDF",
-    },
-  ];
+  const obtenerVideos = async () => {
+    actualizarVideos(await obtenerTodo('videos'))
+  }
+
+  const obtenerCategorias = async () => {
+    actualizarCategoria(await obtenerTodo('categorias'))
+  }
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      await obtenerVideos();
+      await obtenerCategorias();
+    };
+    fetchVideos();
+  }, []);
+
+  const equiposIniciales = categorias
 
   const [equipos, agregarEquipo] = useState(equiposIniciales);
 
@@ -99,35 +77,50 @@ function App() {
           /* Corto circuito */
           mostrarForm && (
             <Formulario
-              equipos={equipos.map((equipo) => equipo.titulo)}
-              registrarColaborador={registrarColaborador}
+              categorias={categorias.map((categoria) => categoria.titulo)}
+              registrarVideo={registrarVideo}
               crearEquipo={crearEquipo}
               formType="crear"
             />
           )
         }
-        <FormularioEditar
+       { mostrarForm && (<FormularioEditar
         equipos={equipos.map((equipo) => equipo.titulo)}
-        registrarColaborador={registrarColaborador}
         crearEquipo={crearEquipo}
         campoEditar = "editField" 
-        />
+        />)}
         <MiOrg titulo="Mi organización" actualizarOrg={actualizarOrg} />
-        {equipos.map((equipo) => (
-          <Equipo
-            data={equipo}
-            key={equipo.titulo}
-            colaboradores={colaboradores.filter(
-              (colaborador) => colaborador.equipo === equipo.titulo
-            )}
-            eliminarColaborador={eliminarColaborador}
-            cambiarLike={cambiarLike}
-          />
-        ))}
+        {equiposIniciales.map((equipo) => {
+        const videosCategoria = videos.filter(
+          (video) =>
+            video.categoria.replace(/\s+/g, '').toLowerCase() ===
+            equipo.titulo.replace(/\s+/g, '').toLowerCase()
+        );
+
+        if (videosCategoria.length > 0) {
+          return (
+            <Equipo
+              key={equipo.titulo}
+              data={{
+                categoria: equipo.titulo, // Nombre de la categoría
+                videos: videosCategoria, // Videos filtrados por categoría
+              }}
+              colorPrimario={equipo.colorPrimario}
+              colorSecundario={equipo.colorSecundario}
+              videosCategoria={videosCategoria} // Se mantiene este prop según la estructura existente
+              eliminarVideo={eliminarVideo}
+              cambiarLike={cambiarLike}
+            />
+          );
+        }
+        return null;
+      })}
         <Footer />
       </div>
     </>
   );
+  
 }
+
 
 export default App;

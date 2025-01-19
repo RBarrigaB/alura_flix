@@ -1,17 +1,110 @@
 {
-    "videos": [
-        {
-            "id": 1,   
-            "titulo": "¿Qué es Javascript?",
-            "categoria": "frontend",
-            "imagen": "https://th.bing.com/th?&id=OVP.uTXSdM_VLRxURWvvVadFWQHgFo&w=327&h=183&c=7&pid=2.1&rs=1",
-            "video": "https://youtu.be/x5YUu0eUc8s",
-            "descripcion": "Explicación de fundamentos de Javascript"
-        }
-    ],
-    "categorias": [
-        {"id": 1, "nombre":"frontend"},
-        {"id": 2, "nombre":"backend"},
-        {"id": 3, "nombre":"dataScience"}
-    ]
+  "videos": [
+    {
+      "id": "90968883-3be7-4a7b-95ff-e9aef347f683",
+      "titulo": "Haunter",
+      "categoria": "Front end",
+      "imagen": "https://th.bing.com/th?id=OIP.3Hl6A42anRoeUTfyXbt-vwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "video": "https://youtu.be/WSH1_7TIx3I",
+      "descripcion": "Video Haunter"
+    },
+    {
+      "id": "4ffd4a7b-064c-447e-be40-8ef34e1dda94",
+      "titulo": "Haunter2",
+      "categoria": "Móvil",
+      "imagen": "https://th.bing.com/th?id=OIP.lnmFyiKysAtIXsor1HKV0gHaIZ&w=234&h=266&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "video": "https://youtu.be/lFbyGx9HENI",
+      "descripcion": "Video gengar"
+    },
+    {
+      "id": "208511ef-5b8e-476c-b005-3206ba6e1aa0",
+      "titulo": "snorlax",
+      "categoria": "Programación",
+      "imagen": "https://th.bing.com/th?id=OVP.e_a2DlNnOF5Ozkj8LJi7TwHgFo&w=243&h=136&c=7&rs=1&qlt=90&o=5&pid=2.1",
+      "video": "https://youtu.be/tPikgFoboBg",
+      "descripcion": "Imagen snorlax"
+    },
+    {
+      "id": "d8368ebc-a7c7-4f1f-b4f6-6e0062b532ba",
+      "titulo": "Buterfree",
+      "categoria": "Programación",
+      "imagen": "https://th.bing.com/th?id=OIP.zSfhBJMFIipgGQcRjC-cWQHaG0&w=260&h=240&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "video": "https://youtu.be/Ej4lUHm_uXo",
+      "descripcion": "Imagen buterfree"
+    },
+    {
+      "id": "45eda9ca-17b1-40cd-8e93-09cd48a2f8cf",
+      "titulo": "Squirtle",
+      "categoria": "Programación",
+      "imagen": "https://th.bing.com/th?id=OIP.DOtbV4FIlSNAt9PbplKZewHaG3&w=259&h=240&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "video": "https://youtu.be/xFHCunY4Gwo",
+      "descripcion": "Card de squirtle"
+    },
+    {
+      "id": "9e7ff3f9-fc95-4cb0-8d3d-a84e36bed47b",
+      "titulo": "Blastoise",
+      "categoria": "Programación",
+      "imagen": "https://th.bing.com/th?id=OIP.Ylfej_KJ6FciN-WO2RCQ1wHaIT&w=236&h=264&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "video": "https://youtu.be/eY_DBWkwSC4",
+      "descripcion": "Card de Blastoise"
+    },
+    {
+      "id": "2a6fc2f5-0411-408f-ab2a-00dd1357fe04",
+      "titulo": "Alakazam",
+      "categoria": "Programación",
+      "imagen": "https://th.bing.com/th?id=OIP.UzPIg0Yep8HpK70X2Cu8uQHaHy&w=243&h=256&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "video": "https://youtu.be/UQ5FOaQmtNY",
+      "descripcion": "Card de alakazam"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "1",
+      "titulo": "Programación",
+      "colorPrimario": "#57C278",
+      "colorSecundario": "#D9F7E9"
+    },
+    {
+      "id": "2",
+      "titulo": "Front end",
+      "colorPrimario": "#82CFFA",
+      "colorSecundario": "#E8F8FF"
+    },
+    {
+      "id": "3",
+      "titulo": "Data science",
+      "colorPrimario": "#A6D157",
+      "colorSecundario": "#F0F8E2"
+    },
+    {
+      "id": "4",
+      "titulo": "Devops",
+      "colorPrimario": "#E06B69",
+      "colorSecundario": "#FDE7E8"
+    },
+    {
+      "id": "5",
+      "titulo": "UX y Diseño",
+      "colorPrimario": "#DB6EBF",
+      "colorSecundario": "#FAE9F5"
+    },
+    {
+      "id": "6",
+      "titulo": "Móvil",
+      "colorPrimario": "#FFBA05",
+      "colorSecundario": "#FFF5D9"
+    },
+    {
+      "id": "7",
+      "titulo": "Innovación y Gestión",
+      "colorPrimario": "#FF8A29",
+      "colorSecundario": "#FFFEDF"
+    },
+    {
+      "id": "8",
+      "titulo": "Backend",
+      "colorPrimario": "#58BC11",
+      "colorSecundario": "#2C5B0B"
+    }
+  ]
 }
