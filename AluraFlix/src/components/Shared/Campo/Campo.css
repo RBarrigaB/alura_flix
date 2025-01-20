@@ -34,3 +34,14 @@
   .general {
     width: 100%;
   }
+
+  @media(max-width: 536px) {
+    .campo_descripcion_crear {
+      width: 90%;
+      margin-left: 10%;
+    }
+
+    .descripcion__label {
+      margin-left: 10%;
+    }
+  }

@@ -10,7 +10,7 @@ const Campo = (props) => {
     setValor,
     type = "texto",
     nombre,
-    descripcionFormato
+    descripcionFormato,
   } = props;
   let setChange = (event) => {
     setValor(event.target.value);
@@ -18,7 +18,7 @@ const Campo = (props) => {
   let types = type === "texto" ? type : "texto " + "campo__" + type;
   if (nombre !== "descripcion") {
     return (
-      <div className={"campo__" + types+" general"}>
+      <div className={"campo__" + types + " general"}>
         <label htmlFor={"input" + titulo}>{titulo}</label>
         <input
           type={type}
@@ -33,7 +33,9 @@ const Campo = (props) => {
   } else {
     return (
       <div className={`campo__${types}`}>
-        <label htmlFor={"input" + titulo}>{titulo}</label>
+        <label htmlFor={"input" + titulo} className="descripcion__label">
+          {titulo}
+        </label>
         <textarea
           type={type}
           placeholder={`Ingresar ${placeholder}...`}

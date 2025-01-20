@@ -99,7 +99,7 @@ function App() {
     <>
       <div>
         <Header mostrarFormVideo={mostrarVideoForm} homeContent={homeContent} />
-        {(categorias.length >0 && categorias !==undefined) && <Banner
+        {mostrarContent && (categorias.length >0 && categorias !==undefined) && <Banner
           categoria={categoriaActual === ""
                 ? categorias[0]
                 : categorias.find(

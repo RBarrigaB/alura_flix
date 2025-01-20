@@ -43,3 +43,22 @@
   width: 100%;
   height: auto;
 }
+
+@media(max-width: 563px) {
+  .modal-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal-close {
+    position: absolute;
+    background-color: transparent;
+    color: white;
+    width: 90px;
+    height: 90px;
+    top: 55px;
+    right: -50px;
+  }
+}

@@ -210,3 +210,39 @@ form button[type="reset"]:hover {
     box-sizing: border-box;
     resize: none;
 }
+
+@media(max-width: 536px) {
+    .titulo__opciones, .imagen__video {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .desc__field  {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .desc__field > * {
+        flex: 1; 
+        max-width: 95%;
+    }
+
+    form .boton-contenedor {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    form .boton-contenedor > * {
+        width: auto;
+        max-width: 90%;
+        text-align: center;
+        margin-left: 120%;
+    }
+}
