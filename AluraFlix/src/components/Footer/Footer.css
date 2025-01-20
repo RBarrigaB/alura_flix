@@ -10,3 +10,9 @@
     background-color:#000;
     border-top: 8px solid #2271D1;
 }
+
+@media (max-width: 536px) {
+    .footer {
+      display: none;
+    }
+}

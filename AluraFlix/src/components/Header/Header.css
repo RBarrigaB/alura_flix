@@ -40,3 +40,51 @@
     color: #2271D1;
     box-shadow: inset 0 0 12px rgba(34, 113, 209, 0.6);
   }
+
+  .icon {
+    display: none; 
+    font-size: 20px;
+    border:none;
+  }
+
+  .btn-text {
+    display: inline;
+    font-size: 16px;
+  }
+
+  @media (max-width: 536px) {
+    .header {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #1c1c1c;
+      padding: 10px 0; 
+      box-sizing: border-box; 
+      height: 60px; 
+      z-index: 1000; 
+    }
+  
+    .btn-text {
+      display: none; /* Oculta los textos de los botones */
+    }
+  
+    .header__logo {
+      display: none; /* Oculta el logo */
+    }
+  
+    .icon {
+      display: inline; /* Muestra solo los íconos */
+      font-size: 24px; /* Tamaño de los íconos */
+      color: white; /* Color de los íconos */
+      border: none;
+    }
+  }
+  
+  /* Agrega un padding al body o contenedor del contenido para evitar que se superponga */
+  body {
+    padding-bottom: 20px; /* La misma altura que el header */
+  }

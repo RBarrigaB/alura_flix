@@ -68,5 +68,11 @@
     transform: scale(1.05); /* Efecto de zoom */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
   }
+
+  @media (max-width: 536px) {
+    .banner {
+        display: none;
+    }
+  }
   
   

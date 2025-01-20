@@ -16,6 +16,7 @@
     overflow-y: hidden; 
     padding: 10px; 
     max-width: 100%; 
+    max-height: 100%;
   }
 
 .titulo__categoria {
@@ -33,3 +34,28 @@
     margin-bottom: 10px;
     margin-left: 15px; 
 }
+
+.videos::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .videos::-webkit-scrollbar-track {
+    background: #888; 
+  }
+  
+  .videos::-webkit-scrollbar-thumb {
+    background: #2271D1; 
+    border-radius: 4px;
+  }
+  
+  .videos::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  @media (max-width: 536px) {
+    .equipo {
+      width: 100%;
+      flex: 1;
+    }
+  }
+  
